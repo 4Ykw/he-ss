@@ -14,7 +14,7 @@ Inside the provided scripts are some variables allowing you to customise or adap
 ### 2. `upload_archive_gdrive.sh`
   - `PM2_PROCESS_NAME` - The name of your pm2 Hive-Engine node process. __(mandatory)__
   - `BACKUPS_DIR` - The backup directory to host your local snapshots (defaults to your home directory)
-  - `GD_MOUNT` - The remote Google Drive local mountpoint (defaults to your home directory plus myGoogleDrive subdirectory)
+  - `GD_MOUNT` - The Google Drive local mountpoint (defaults to your home directory plus myGoogleDrive subdirectory)
   - `GD_SUBDIR` - The remote directory on your Google Drive to host your snapshots (defaults to hive-engine-snapshots)
 
 ## How to start
@@ -32,7 +32,7 @@ Alternatively you can specify a log file and then `tail -f` that log:
 Ctrl+C or kill all the pids from the main script and dependent ones (use `ps -ef | grep <search>` to find it)
 
 # Running via crontab
-Before you install a crontab entry to run this, be sure to comment the following lines inside the `he-ss.sh` script (if you are not sure of what you are doing):
+Before you install a crontab entry to run this, be sure to comment the following lines inside the `he_ss.sh` script (if you are not sure of what you are doing):
 ```
 ## Main Tasks
 # 1st dump MongoDB locally (will stop/start your node)
@@ -41,7 +41,7 @@ Before you install a crontab entry to run this, be sure to comment the following
 ./upload_archive_gdrive.sh
 ```
 
-Then add add a crontab entry (`crontab -e`) such as (for example):
+Then add a crontab entry (`crontab -e`) such as (for example):
 ```
 # Runs the script at 3 AM, every day
 0 3 * * * cd /<location_of_he-ss_script>; ./he_ss.sh >> ./he_ss.log 2>&1
