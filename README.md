@@ -41,7 +41,7 @@ Before you install a crontab entry to run this, be sure to comment the following
 ./upload_archive_gdrive.sh
 ```
 
-Then run add a crontab entry such as (for example):
+Then add add a crontab entry (`crontab -e`) such as (for example):
 ```
 # Runs the script at 3 AM, every day
 0 3 * * * cd /<location_of_he-ss_script>; ./he_ss.sh >> ./he_ss.log 2>&1
