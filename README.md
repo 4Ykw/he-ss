@@ -9,13 +9,13 @@ Name of the executable bash script that runs from anywhere you deploy.
 Inside the provided scripts are some variables allowing you to customise or adapt to your node infrastructure.
 
 1. `backup_mongodb.sh`
-1.1 `PM2_PROCESS_NAME` - The name of your pm2 Hive-Engine node process. (mandatory)
-1.2 `BACKUPS_DIR` - The backup directory to host your local snapshots (defaults to your home directory)
+  - `PM2_PROCESS_NAME` - The name of your pm2 Hive-Engine node process. (mandatory)
+  - `BACKUPS_DIR` - The backup directory to host your local snapshots (defaults to your home directory)
 2. `upload_archive_gdrive.sh`
-2.1 `PM2_PROCESS_NAME` - The name of your pm2 Hive-Engine node process. (mandatory) 
-2.2 `BACKUPS_DIR` - The backup directory to host your local snapshots (defaults to your home directory)
-2.3 `GD_MOUNT` - The remote Google Drive local mountpoint (defaults to your home directory plus myGoogleDrive subdirectory)
-2.4 `GD_SUBDIR` - The remote directory on your Google Drive to host your snapshots (defaults to hive-engine-snapshots)
+  - `PM2_PROCESS_NAME` - The name of your pm2 Hive-Engine node process. (mandatory) 
+  - `BACKUPS_DIR` - The backup directory to host your local snapshots (defaults to your home directory)
+  - `GD_MOUNT` - The remote Google Drive local mountpoint (defaults to your home directory plus myGoogleDrive subdirectory)
+  - `GD_SUBDIR` - The remote directory on your Google Drive to host your snapshots (defaults to hive-engine-snapshots)
 
 ## How to start
 Change the variable `PM2_PROCESS_NAME` inside the `backup_mongodb.sh` and the `upload_archive_gdrive.sh` scripts to the name of your pm2 process. Then simply execute the script:
