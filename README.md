@@ -8,10 +8,10 @@ Name of the executable bash script that runs from anywhere you deploy.
 ## Configurables
 Inside the provided scripts are some variables allowing you to customise or adapt to your node infrastructure.
 
-1. `backup_mongodb.sh`
+### 1. `backup_mongodb.sh`
   - `PM2_PROCESS_NAME` - The name of your pm2 Hive-Engine node process. __(mandatory)__
   - `BACKUPS_DIR` - The backup directory to host your local snapshots (defaults to your home directory)
-2. `upload_archive_gdrive.sh`
+### 2. `upload_archive_gdrive.sh`
   - `PM2_PROCESS_NAME` - The name of your pm2 Hive-Engine node process. __(mandatory)__
   - `BACKUPS_DIR` - The backup directory to host your local snapshots (defaults to your home directory)
   - `GD_MOUNT` - The remote Google Drive local mountpoint (defaults to your home directory plus myGoogleDrive subdirectory)
