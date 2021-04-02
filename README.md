@@ -1,6 +1,6 @@
 # HIVE-Engine Snapshots Service (HE-SS)
 
-This is a bash script to automate the Hive-Engine Witness node snapshots backups.
+This is a collection of bash scripts to automate the Hive-Engine Witness node snapshots backups.
 
 ## `he_ss.sh`
 Name of the executable bash script that runs from anywhere you deploy.
