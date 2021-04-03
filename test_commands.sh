@@ -2,8 +2,8 @@
 # Program: Crontab Command Test Helper (for HE-SS)
 # Description: Validates all required commands can sucessfully execute from crontab before enabling the script for production
 # Author: forykw
-# Date: 2021/04/02
-# v1.0
+# Date: 2021/04/03
+# v1.1
 
 # This script needs to run from crontab to test the commands run sucessfully, by evaluating its output
 `which echo` "### Start of test_commands.sh script"
@@ -24,4 +24,7 @@ printf "printf works\n"
 rsync --version > /dev/null && echo "rsync works"
 mountpoint --version > /dev/null && echo "mountpoint works"
 google-drive-ocamlfuse -version | head -n 1
+cd . && echo "cd works"
+echo "node version: "`node -v`
+sleep --version > /dev/null && echo "sleep works"
 echo "### End of test_commands.sh script (carefully inspect output above)"

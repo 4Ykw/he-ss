@@ -2,12 +2,13 @@
 # Program: Local HIVE-Engine Snapshots Backups (for HE-SS)
 # Description: Manages local snapshots backups for your HIVE-Engine witness node via MongoDB dumps and controls your node pm2 process state
 # Author: forykw
-# Date: 2021/04/02
-# v1.0
+# Date: 2021/04/03
+# v1.1
 
 ## Adjust to your node
 PM2_PROCESS_NAME="prod-hivengwit"
 BACKUPS_DIR="${HOME}"
+WITNESS_NODE_DIR="${HOME}/prod/steemsmartcontracts"
 
 # Timestamp format for script output
 timestamp_format ()
@@ -28,6 +29,11 @@ if [ ! -d ${BACKUPS_DIR} ]; then
 fi
 
 echo $(timestamp_format)"Starting local backup process.."
+echo $(timestamp_format)"Unregistering witness..."
+cd ${WITNESS_NODE_DIR}
+node witness_action.js unregister
+echo $(timestamp_format)"Message broadcasted! Waiting 5 seconds..."
+sleep 5
 echo $(timestamp_format)"Stopping node..."
 pm2 stop ${PM2_PROCESS_NAME}
 echo $(timestamp_format)"Dumping mongoDB..."
