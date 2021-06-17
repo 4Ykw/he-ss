@@ -79,7 +79,7 @@ echo $(timestamp_format)"Total number of Google Drive snapshots (before deletion
 if [ ! "${LAST_SNAPSHOT}" == "${GD_LAST_SNAPSHOT}" ]; then
 
 	# Define max snapshots to maintain on Google Drive
-	if [ `printf '%d\n' "${GD_NR_SNAPS}"` -gt 2 ]; then
+	if [ `printf '%d\n' "${GD_NR_SNAPS}"` -gt 0 ]; then
 		# Remove oldest snapshot
 		rm ${GD_MOUNT}/${GD_SUBDIR}/${GD_OLDEST_SNAPSHOT}
 		echo $(timestamp_format)"Deleted Google Drive oldest snapshot: ${GD_OLDEST_SNAPSHOT}"
